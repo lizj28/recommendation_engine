@@ -1,0 +1,85 @@
+/**
+ * Hero subheader (components/_hero-subheader.scss)
+ */
+
+/* ----- General ----- */
+.hero-subheader {
+	color: #0C061A;
+	background: linear-gradient(90deg, #614385 0%, #516395 100%);
+	padding: 3.75rem 0 (4.6875rem - 1.25rem) 0;
+
+	@media (min-width: $screen-sm-min) {
+		padding: 9.375rem 0 (10.3125rem - 1.25rem) 0;
+	}
+
+	.btn {
+		margin-right: .9375rem;
+	}
+
+	.btn--github,
+	.btn--w-arrow-down {
+		@extend .btn--dark;
+	}
+
+	.site-header + & {
+		padding: 9.375rem 0 (4.6875rem - 1.25rem) 0;
+
+		@media (min-width: $screen-sm-min) {
+			padding: 15rem 0 (10.3125rem - 1.25rem) 0;
+		}
+	}
+}
+
+.hero-subheader-default-page {
+	background: linear-gradient(90deg, #B993D6 0%, #8CA6DB 100%);
+}
+
+.hero-subheader--before-out {
+	@media (min-width: $screen-sm-min) {
+		padding: 9.375rem 0 (15.3125rem - 1.25rem) 0;
+	}
+}
+
+/* ----- Title ----- */
+.hero-subheader__title {
+	margin-top: 0;
+	color: #B78FFF;
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero-subheader__title-default-page {
+	margin-top: 0;
+	color: #452A7D;
+	text-shadow: 0px 1.92834px 1.92834px rgba(0, 0, 0, 0.25);
+
+}
+
+/* ----- Description ----- */
+.hero-subheader__desc {
+	margin-top: 2rem;
+	margin-bottom: 1.875rem;
+	color: #FFFFFF;
+}
+
+.hero-subheader__desc-default-page {
+	color: #0C061A;
+}
+
+/* ----- Author ----- */
+.hero-subheader__author {
+	border-left: 2px solid;
+	padding-left: 2.5rem;
+
+	.btn {
+		margin-bottom: 0;
+	}
+}
+
+.hero-subheader__author-title {
+	font-size: $font-size-h5;
+}
+
+/* ----- More ----- */
+.hero-subheader__btn-more {
+	color: inherit;
+}
