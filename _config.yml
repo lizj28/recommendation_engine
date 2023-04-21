@@ -13,7 +13,7 @@ doks:
             logo:
                 text: Liz Johnson
                 image:
-            copyright: Made with <img class="site-footer__heart" src="/doks-theme/assets/images/production_assets/heart_emoji.svg"> in Dallas by Liz &copy; 2023<br>All rights reserved.
+            copyright: Made with ♥ in Dallas by Liz &copy; 2023<br>All rights reserved.
         social_list:
             - network_name: twitter
               profile_url: 'https://twitter.com/LizJohn58223559'
