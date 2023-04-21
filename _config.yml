@@ -1,6 +1,8 @@
 # Theme settings
 doks:
-    baseurl:
+    domain: lizj28.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+    url: https://lizj28.github.io  # the base hostname and protocol for your site, e.g. http://example.com
+    baseurl: /recommendation_engine/      # place folder name if the site is served in a subfolder
     color_theme: # Available themes: blue (default), green, purple, red and yellow
     header:
         logo:
