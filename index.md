@@ -16,18 +16,18 @@ buttons:
 grid_navigation:
     - title: Inspection
       excerpt: In this section we'll start by inspecting our data and determine what we need to do in terms of data cleaning.
-      cta: Read more
-      url: 'https://lizzypy.github.io/recommendation_engine/project/#step-0'
+      cta: Let's Go!
+      url: '/project/#step-0'
     - title: Data Cleaning
       excerpt: Here we will clean our data getting rid of unwanted rows and cleaning our genres column.
-      cta: Read more
-      url: 'https://lizzypy.github.io/recommendation_engine/project/#step-1'
+      cta: Let's Go!
+      url: '/project/#step-1'
     - title: Feature Preparation
       excerpt: In this section we will prepare our feature for our recommendation engine.  We will generate a vector representation of our genres column so that our rows can be mathematically compared to each other.
-      cta: Read more
+      cta: Let's Go!
       url: '#'
     - title: Building our Engine
       excerpt: Let's build our engine so that we can recommend movies to our users based on content!
-      cta: Read more
+      cta: Let's Go!
       url: '#'
 ---
