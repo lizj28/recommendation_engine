@@ -7,7 +7,7 @@ description: Let's build our recommendation engine.  We'll start by cleaning our
 
 ---
 
-## Step 0 - Inspection
+## Step 1 - Inspection
 
 Let's read in our data from our csv and then inspect it.
 
@@ -23,11 +23,54 @@ from utils.cleaning import combine_genres_list
 movies_df: pd.DataFrame = pd.read_csv('input/all_movies.csv')
 movies_df.sample(20)
 ```
-
+![img.png](img.png)
 ```python
 movies_df
 ```
 
 ```python
 movies_df.shape[0]
+```
+
+
+## Step 2 - Cleaning
+
+Now let's clean our input data. Some things we'll do here are:
+
+1. Cleaning up strings
+2. Removing unwanted rows
+3. Checking our data for duplicates
+
+```python
+movies_cleaned_df = movies_df.copy()
+movies_cleaned_df['genres'] = movies_cleaned_df['genres'].apply(lower_case_and_strip_spaces)
+```
+
+```python
+
+```
+
+```python
+
+
+```
+
+```python
+
+
+```
+
+```python
+
+
+```
+
+```python
+
+
+```
+
+```python
+
+
 ```
