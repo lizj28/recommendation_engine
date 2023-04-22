@@ -190,14 +190,29 @@ movies_grouped_by_title_df.sample(10)
 ![images/group_by_result.png](images/group_by_result.png)
 
 ```python
-
+get_aladdin_example(movies_grouped_by_title_df)
 ```
+![images/aladdin_grouped.png](images/aladdin_grouped.png)
+
+Clean up the genres list.
 ```python
-
+movies_unique_genres_df = movies_grouped_by_title_df.copy()
+movies_unique_genres_df['genres'] = movies_unique_genres_df['genres'].apply(combine_genres_list)
+movies_unique_genres_df.sample(10)
 ```
+![images/unique_genres.png](images/unique_genres.png)
 ```python
-
+get_aladdin_example(movies_unique_genres_df)
 ```
+![images/aladdin_unique.png](images/aladdin_unique.png)
+
+Now let's turn our genres column into a space separated list of genres as if they were words in a document.
 ```python
-
+movies_with_document_description_df = movies_unique_genres_df.copy()
+movies_with_document_description_df['genres'] = movies_with_document_description_df['genres'].apply(lambda x: ' '.join(x))
+movies_with_document_description_df.sample(10)
 ```
+![images/genre_description.png](images/genre_description.png)
+
+## Step 4 - Building our engine
+
