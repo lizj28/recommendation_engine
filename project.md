@@ -31,7 +31,7 @@ movies_df
 ```python
 movies_df.shape[0]
 ```
-58093
+**58093**
 
 ## Step 2 - Cleaning
 
@@ -78,7 +78,7 @@ movies_cleaned_df = movies_cleaned_df.loc[movies_cleaned_df['genres'] != '(no ge
 ```python
 movies_cleaned_df.shape[0]
 ```
-53832
+**53832**
 ```python
 assert movies_cleaned_df.shape[0] < movies_df.shape[0]
 ```
@@ -95,7 +95,7 @@ duplicated_by_title = movies_cleaned_df.duplicated(['title'])
 duplicated_by_title_df = movies_cleaned_df.loc[duplicated_by_title]
 duplicated_by_title_df.shape
 ```
-(66, 3)
+**(66, 3)**
 
 The movies that are duplicated by title and genre
 ```python
@@ -103,7 +103,7 @@ duplicated_by_title_and_genre = movies_cleaned_df.duplicated(['title', 'genres']
 duplicated_by_title_and_genre_df = movies_cleaned_df.loc[duplicated_by_title_and_genre]
 duplicated_by_title_and_genre_df.shape
 ```
-(14, 3)
+**(14, 3)**
 
 The movies that are duplicated by title but their generes don't match
 
@@ -246,7 +246,7 @@ all_genres
 ```python
 len(all_genres)
 ```
-19
+**19**
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
 tf = TfidfVectorizer(vocabulary=all_genres)
