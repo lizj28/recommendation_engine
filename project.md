@@ -216,3 +216,75 @@ movies_with_document_description_df.sample(10)
 
 ## Step 4 - Building our engine
 
+```python
+for_genres_list_df = movies_unique_genres_df.copy()
+for_genres_list_df = for_genres_list_df['genres'].explode().reset_index()
+all_genres = list(for_genres_list_df.genres.unique())
+all_genres
+```
+```python
+['musical',
+ 'drama',
+ 'comedy',
+ 'horror',
+ 'mystery',
+ 'thriller',
+ 'documentary',
+ 'crime',
+ 'western',
+ 'animation',
+ 'war',
+ 'action',
+ 'fantasy',
+ 'adventure',
+ 'romance',
+ 'children',
+ 'sci-fi',
+ 'film-noir',
+ 'imax']
+```
+```python
+len(all_genres)
+```
+19
+```python
+from sklearn.feature_extraction.text import TfidfVectorizer
+tf = TfidfVectorizer(vocabulary=all_genres)
+tfidf_matrix = tf.fit_transform(movies_with_document_description_df['genres'])
+pd.DataFrame(tfidf_matrix.toarray())
+```
+![images/tfidf_matrix.png](images/tfidf_matrix.png)
+```python
+from sklearn.metrics.pairwise import cosine_similarity
+cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
+pd.DataFrame(cosine_sim)
+```
+![images/cosine_sim_matrix.png](images/cosine_sim_matrix.png)
+```python
+from utils.recommendation import get_similar_movies
+
+similar_movies = get_similar_movies('Toy Story (1995)', cosine_sim, movies_with_document_description_df, 20)
+similar_movies
+```
+```python
+['Antz (1998)',
+ 'Asterix and the Vikings (Astérix et les Vikings) (2006)',
+ 'Boxtrolls, The (2014)',
+ 'Brother Bear 2 (2006)',
+ 'DuckTales: The Movie - Treasure of the Lost Lamp (1990)',
+ "Emperor's New Groove, The (2000)",
+ 'Home (2015)',
+ 'Moana (2016)',
+ 'Monsters, Inc. (2001)',
+ "Olaf's Frozen Adventure (2017)",
+ 'Penguin Highway (2018)',
+ 'Puss in Book: Trapped in an Epic Tale (2017)',
+ 'Scooby-Doo! Mask of the Blue Falcon (2012)',
+ 'Shrek the Third (2007)',
+ 'Space Jam (1996)',
+ 'Tale of Despereaux, The (2008)',
+ 'Tangled: Before Ever After (2017)',
+ 'The Croods 2 (2017)',
+ 'The Dragon Spell (2016)',
+ 'The Good Dinosaur (2015)']
+```
