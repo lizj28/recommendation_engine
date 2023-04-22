@@ -25,9 +25,9 @@ grid_navigation:
     - title: Feature Preparation
       excerpt: In this section we will prepare our feature for our recommendation engine.  We will generate a vector representation of our genres column so that our rows can be mathematically compared to each other.
       cta: Let's Go!
-      url: '/project/#step-3---feature_preparation'
+      url: '/project/#step-3---feature-preparation'
     - title: Building our Engine
       excerpt: Let's build our engine so that we can recommend movies to our users based on content!
       cta: Let's Go!
-      url: '#'
+      url: '/project/#step-4---building-our-engine'
 ---
