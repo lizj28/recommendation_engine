@@ -23,7 +23,7 @@ from utils.cleaning import combine_genres_list
 movies_df: pd.DataFrame = pd.read_csv('input/all_movies.csv')
 movies_df.sample(20)
 ```
-![img.png](img.png)
+![img.png](images/img.png)
 ```python
 movies_df
 ```
