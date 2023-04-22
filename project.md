@@ -97,7 +97,7 @@ duplicated_by_title_df.shape
 ```
 (66, 3)
 
-### The movies that are duplicated by title and genre
+The movies that are duplicated by title and genre
 ```python
 duplicated_by_title_and_genre = movies_cleaned_df.duplicated(['title', 'genres'])
 duplicated_by_title_and_genre_df = movies_cleaned_df.loc[duplicated_by_title_and_genre]
@@ -105,7 +105,7 @@ duplicated_by_title_and_genre_df.shape
 ```
 (14, 3)
 
-### The movies that are duplicated by title but their generes don't match
+The movies that are duplicated by title but their generes don't match
 
 ```python
 newdf=pd.concat([duplicated_by_title_and_genre_df,duplicated_by_title_df]).drop_duplicates(keep=False)
@@ -166,7 +166,7 @@ records_duplicated_by_title_only
  'War of the Worlds (2005)',
  'Weekend (2011)'}
 ```
-### Now we can locate an example using the titles in our list.
+Now we can locate an example using the titles in our list.
 ```python
 ALADDIN = 'Aladdin (1992)'
 def get_aladdin_example(df: pd.DataFrame) -> pd.DataFrame:
@@ -174,9 +174,21 @@ def get_aladdin_example(df: pd.DataFrame) -> pd.DataFrame:
 movies_cleaned_df.loc[movies_cleaned_df['title'] == ALADDIN]
 ```
 ![images/aladdin_example_1.png](images/aladdin_example_1.png)
-```python
 
+## Step 3 - Feature Preparation
+
+Feature: A descriptive attribute that can be used in our algorithms.
+
+Let's use our genres as our feature.
+
+First we need to group by movie title.
+```python
+movies_grouped_by_title_df = movies_cleaned_df.copy()
+movies_grouped_by_title_df = movies_grouped_by_title_df.groupby('title').agg({'genres': lambda x: x.to_list()}).reset_index()
+movies_grouped_by_title_df.sample(10)
 ```
+![images/group_by_result.png](images/group_by_result.png)
+
 ```python
 
 ```
