@@ -3,7 +3,7 @@
 layout: default
 
 title: Recommendation Engine
-description: Let's build our recommendation engine.  We'll start by cleaning our data. Then we'll prepare our features.  Finally, we'll build our engine!
+description: Let's build our recommendation engine! We'll start by inspecting and cleaning our data. Then we'll prepare the feature that we will use in our ML algorithms.  Finally, we'll write some code and build our engine to recommend movies to users based on content!
 
 ---
 
