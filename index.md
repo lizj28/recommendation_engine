@@ -9,7 +9,7 @@ description: Full stack software engineer with experience in a wide variety of l
 buttons:
     - icon: arrow-right
       content: "Let's get started"
-      url: '#'
+      url: '/project'
       external_url: true
 
 # Grid navigation
